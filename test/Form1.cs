@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.Reflection.Emit;
 using System.Windows.Forms;
 
 namespace test
@@ -11,6 +13,8 @@ namespace test
         public Form1()
         {
             InitializeComponent();
+            textBox2.Hide();
+          
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -24,10 +28,12 @@ namespace test
 
                 textBox1.Hide();
                 label1.Hide();
-
+                label4.Show();
                 Password.Hide();
                 label2.Hide();
-
+                button1.Show();
+                textBox2.Show();
+                button2.Show();
                 LogaIn.Hide();
             }
             else
@@ -39,6 +45,25 @@ namespace test
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            string text = textBox2.Text;
+            text += textBox2.Text;
+            label5.Show();
+            label5.Text = text;
+            panel1.BackColor = Color.AliceBlue;
+            panel1.Size = new Size(300, 100);
+
+            label5.Parent = panel1;
+            label5.BackColor = Color.Transparent;
+            textBox2.Clear();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            label5.Text = "";
         }
     }
 }
